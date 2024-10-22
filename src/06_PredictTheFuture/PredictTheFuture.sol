@@ -2,7 +2,6 @@
 pragma solidity ^0.8.12;
 
 // Guess number before it's generated and you will receive all the funds from contract.
-
 contract PredictTheFuture {
     address public player;
     uint8 public guess;
@@ -25,7 +24,6 @@ contract PredictTheFuture {
         require(block.number > nextBlockNumber, "Need to call at next block");
 
         uint256 answer = uint256(keccak256(abi.encodePacked(blockhash(block.number - 1), block.timestamp))) % 10;
-
         player = address(0);
         if (guess == answer) {
             payable(msg.sender).transfer(address(this).balance);

@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.25;
-
 // This lottery uses blockhash of a future block, try to beat it!
 
 contract WheelOfFortune {

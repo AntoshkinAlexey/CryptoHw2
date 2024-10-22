@@ -32,7 +32,6 @@ contract LendingPool {
     function flashLoan(uint256 _amount) external {
         uint256 balanceBefore = address(this).balance;
         require(balanceBefore >= _amount, "Not enough balance");
-
         IFlashLoanReceiver(msg.sender).execute{value: _amount}();
 
         require(address(this).balance >= balanceBefore, "Flashloan not paid back");

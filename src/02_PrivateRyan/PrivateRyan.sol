@@ -26,7 +26,6 @@ contract PrivateRyan {
         uint256 factor = (FACTOR * 100) / max;
         uint256 blockNumber = block.number - seed;
         uint256 hashVal = uint256(blockhash(blockNumber));
-
         return uint256((uint256(hashVal) / factor)) % max;
     }
 }
